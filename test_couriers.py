@@ -19,8 +19,8 @@ def new_courier_data():
 def client():
     """Клиент для работы с API курьеров."""
     return CourierAPIClient(
-        os.getenv("API_BASE_URL"),
-        os.getenv("AUTH_TOKEN"),
+        os.getenv("API_BASE_URL", "http://127.0.0.1:5001/api"),
+        os.getenv("AUTH_TOKEN", "test_token_123"),
     )
 
 @pytest.mark.usefixtures("fake_server")
